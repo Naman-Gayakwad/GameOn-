@@ -92,7 +92,7 @@ class _SportTypeState extends State<SportType> {
               this.allsportId = onChangedval;
               print("Selected Sport: $onChangedval");
             }, (onValidateval) {
-              return = null;
+              return  null;
             },
             borderColor: Theme.of(context).primaryColor,
             borderFocusColor: Theme.of(context).primaryColor,
