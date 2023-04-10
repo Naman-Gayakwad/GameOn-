@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "273214355746",
+    "project_id": "gameon-official",
+    "storage_bucket": "gameon-official.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273214355746:android:6eaed9c2be7f7b8c6e8d7b",
+        "android_client_info": {
+          "package_name": "com.example.game_on"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273214355746-8jlba2qpiqu6i8pdtj4e1huhnpnv45bs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.game_on",
+            "certificate_hash": "f27e2a25322ca04829b380ba71f3c116152ec952"
+          }
+        },
+        {
+          "client_id": "273214355746-0trk2i8641jmhkf7dn56b0pjvof3a28q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_CRWMmbc4FW2FDZnXLbEMOjXeScxQuuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273214355746-0trk2i8641jmhkf7dn56b0pjvof3a28q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273214355746-jaj303gk6qk4uhahant793bvbgp087i2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gameOn"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
