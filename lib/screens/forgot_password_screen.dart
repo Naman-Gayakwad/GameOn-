@@ -10,18 +10,19 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  TextEditingController forgotPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         const DoubleCircle(),
         Padding(
-          padding: EdgeInsets.fromLTRB(30, 200, 30, 0),
+          padding: const EdgeInsets.fromLTRB(30, 200, 30, 0),
           child: Container(
             height: 337,
             width: 376,
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                color: Colors.white, borderRadius: BorderRadius.circular(35)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,39 +50,49 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      label: Text('Enter your email'),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 58,
-                  width: 344,
-                  // color: Colors.red,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(58),
-                      color: Colors.purpleAccent),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      print('get OTP Pressed');
-                    },
-                    style: ButtonStyle(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 0.87,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black)),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Text(
-                        'Get OTP',
-                        style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
+                      padding: const EdgeInsets.only(left: 8),
+                      child: TextField(
+                        controller: forgotPasswordController,
+                        onChanged: (value) {
+                          setState(() {});
+                        },
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.email),
+                          border: InputBorder.none,
+                          hintText: 'Enter your email',
+                        ),
+                        keyboardType: TextInputType.emailAddress,
                       ),
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100)),
+                    alignment: Alignment.center,
+                    backgroundColor: Colors.purple.shade600,
+                    minimumSize: const Size(344, 58),
+                  ),
+                  child: const Text(
+                    'Get OTP',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                  ),
+                )
               ],
             ),
           ),
