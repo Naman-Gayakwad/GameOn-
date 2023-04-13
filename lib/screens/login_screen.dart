@@ -29,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           SizedBox(
@@ -139,7 +140,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         final userCred = await FirebaseAuth.instance
                             .signInWithEmailAndPassword(
                                 email: emailController.text,
-                                password: passwordController.text);
+                                password: passwordController.text)
+                            .catchError((error) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(error.toString())));
+                        });
                         print(userCred);
                         nextScreenReplace(context, HomeScreen());
                       },
@@ -245,7 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
 //handling google signin
-  Future<void> handleGoogleSignIn() async {
+  Future handleGoogleSignIn() async {
     final sp = context.read<SignInProvider>();
     final ip = context.read<InternetProvider>();
     await ip.checkInternetConnection();
@@ -264,6 +269,8 @@ class _LoginScreenState extends State<LoginScreen> {
           sp.checkUserExists().then(
             (value) async {
               if (value == true) {
+                // nextScreen(context, HomeScreen());
+                nextScreenReplace(context, HomeScreen());
                 //user exist
               } else {
                 //user does not exist

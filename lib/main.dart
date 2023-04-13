@@ -7,6 +7,7 @@ import 'screens/loadingpage.dart';
 import 'screens/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
+import './screens/forgot_password_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,9 +35,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: const Scaffold(
-          body: SingleChildScrollView(
-            child: Scene(),
-          ),
+          // body: SingleChildScrollView(
+          body: ForgotPassword(),
+          // ),
         ),
       ),
     );
