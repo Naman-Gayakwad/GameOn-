@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/utils.dart';
-import 'package:game_on/outdoorlist.dart';
-import 'package:game_on/indoorlist.dart';
+import 'utils.dart';
+import 'outdoorlist.dart';
+import 'indoorlist.dart';
 
 class Type extends StatefulWidget {
   const Type({super.key});
@@ -33,7 +33,6 @@ class _TypeState extends State<Type> {
           child: Stack(
             children: [
               Positioned(
-                
                 left: 63.5 * fem,
                 top: 314 * fem,
                 child: Align(
@@ -56,13 +55,12 @@ class _TypeState extends State<Type> {
                 ),
               ),
               Positioned(
-               
                 left: 48 * fem,
                 top: 466 * fem,
                 child: TextButton(
                   onPressed: () {
-                    
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => IndoorList()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => IndoorList()));
 
                     print("IndoorList");
                   },
@@ -82,7 +80,6 @@ class _TypeState extends State<Type> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 133 * fem, 0 * fem),
                           child: Text(
@@ -98,7 +95,6 @@ class _TypeState extends State<Type> {
                           ),
                         ),
                         Container(
-            
                           width: 33 * fem,
                           height: 32 * fem,
                           child: Image.asset(
@@ -113,13 +109,15 @@ class _TypeState extends State<Type> {
                 ),
               ),
               Positioned(
-                
                 left: 48 * fem,
                 top: 563 * fem,
                 child: TextButton(
                   onPressed: () {
                     setState(() {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => OutdoorList()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OutdoorList()));
                       print("OutdoorList");
                     });
                   },
@@ -139,7 +137,6 @@ class _TypeState extends State<Type> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 105 * fem, 0 * fem),
                           child: Text(
@@ -155,7 +152,6 @@ class _TypeState extends State<Type> {
                           ),
                         ),
                         Container(
-                          
                           width: 33 * fem,
                           height: 32 * fem,
                           child: Image.asset(

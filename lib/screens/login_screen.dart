@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'forgot_password_screen.dart';
+import 'mainpage.dart';
 import '../providers/internet_provider.dart';
 import '../providers/sign_in_provider.dart';
-import 'home_screen.dart';
+import '../Sport_type.dart';
 import '../utils/next_screen.dart';
 import '../utils/snack_bar.dart';
 import 'package:provider/provider.dart';
@@ -123,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(left: 170, top: 2),
                       child: TextButton(
                         onPressed: () {
-                          print('Forgot password pressed');
+                          nextScreenReplace(context, ForgotPassword());
                         },
                         child: const Text(
                           'Forgot password?',
@@ -146,13 +148,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               SnackBar(content: Text(error.toString())));
                         });
                         print(userCred);
-                        nextScreenReplace(context, HomeScreen());
+                        nextScreenReplace(context, SportType());
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.04,
                         width: MediaQuery.of(context).size.width * 0.3,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 197, 154, 235),
+                          color: const Color.fromARGB(255, 197, 154, 235),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: FittedBox(
@@ -201,44 +203,85 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             handleGoogleSignIn();
                           },
-                          width: MediaQuery.of(context).size.width * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.80,
                           controller: googleController,
                           successColor: Colors.purple,
-                          color: Colors.red[400],
+                          color: Colors.red.shade300,
                           child: Wrap(
-                            children: [Icon(FontAwesomeIcons.google)],
+                            children: const [Icon(FontAwesomeIcons.google)],
                           ),
                         ),
-                        RoundedLoadingButton(
-                          onPressed: () {},
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          controller: facebookController,
-                          successColor: Colors.purple,
-                          child: Wrap(
-                            children: [Icon(FontAwesomeIcons.facebook)],
+                        // RoundedLoadingButton(
+                        //   onPressed: () {},
+                        //   width: MediaQuery.of(context).size.width * 0.15,
+                        //   controller: facebookController,
+                        //   successColor: Colors.purple,
+                        //   child: Wrap(
+                        //     children: [Icon(FontAwesomeIcons.facebook)],
+                        //   ),
+                        // ),
+                        // RoundedLoadingButton(
+                        //   onPressed: () {},
+                        //   width: MediaQuery.of(context).size.width * 0.15,
+                        //   controller: facebookController,
+                        //   successColor: Colors.purple,
+                        //   child: Wrap(
+                        //     children: [Icon(FontAwesomeIcons.twitter)],
+                        //   ),
+                        // ),
+                        // RoundedLoadingButton(
+                        //   onPressed: () {},
+                        //   width: MediaQuery.of(context).size.width * 0.15,
+                        //   controller: facebookController,
+                        //   successColor: Colors.purple,
+                        //   color: Colors.green[400],
+                        //   child: Wrap(
+                        //     children: [Icon(FontAwesomeIcons.phone)],
+                        //   ),
+                        // ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text('Don\'t have an account? Create Now'),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          child: const Divider(
+                            color: Colors.grey,
+                            thickness: 0.5,
+                            // indent: 29,
+                            // endIndent: 10,
                           ),
                         ),
-                        RoundedLoadingButton(
-                          onPressed: () {},
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          controller: facebookController,
-                          successColor: Colors.purple,
-                          child: Wrap(
-                            children: [Icon(FontAwesomeIcons.twitter)],
-                          ),
-                        ),
-                        RoundedLoadingButton(
-                          onPressed: () {},
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          controller: facebookController,
-                          successColor: Colors.purple,
-                          color: Colors.green[400],
-                          child: Wrap(
-                            children: [Icon(FontAwesomeIcons.phone)],
+                        TextButton(
+                            onPressed: () {
+                              nextScreenReplace(context, MainPage());
+                            },
+                            child: Text(
+                              'Skip for now',
+                              style: TextStyle(color: Colors.grey.shade600),
+                            )),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          child: const Divider(
+                            color: Colors.grey,
+                            thickness: 0.5,
+                            // indent: 29,
+                            // endIndent: 10,
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               )
@@ -270,7 +313,10 @@ class _LoginScreenState extends State<LoginScreen> {
             (value) async {
               if (value == true) {
                 // nextScreen(context, HomeScreen());
-                nextScreenReplace(context, HomeScreen());
+                nextScreenReplace(
+                  context,
+                  MainPage(),
+                );
                 //user exist
               } else {
                 //user does not exist
@@ -291,7 +337,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   handleAfterSignIn() {
     Future.delayed(const Duration(milliseconds: 1000)).then((value) {
-      nextScreenReplace(context, const HomeScreen());
+      nextScreenReplace(context, SportType());
     });
   }
 }

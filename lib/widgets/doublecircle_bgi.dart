@@ -36,7 +36,7 @@ class _DoubleCircleState extends State<DoubleCircle> {
           ),
         ),
         Positioned(
-          bottom: 180,
+          top: 500,
           left: 60,
           child: Container(
             height: MediaQuery.of(context).size.height * 0.2,

@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'login_screen.dart';
 import 'package:provider/provider.dart';
+
 import '../providers/sign_in_provider.dart';
+import '../Sport_type.dart';
+import 'login_screen.dart';
 
 class Scene extends StatefulWidget {
   const Scene({super.key});
@@ -23,8 +24,8 @@ class _SceneState extends State<Scene> {
       sp.isSignedIn == false
           ? Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => const LoginScreen()))
-          : Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()));
+          : Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => SportType()));
     });
   }
 

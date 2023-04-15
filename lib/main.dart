@@ -1,13 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:game_on/providers/internet_provider.dart';
+import 'screens/home.dart';
+import 'Sport_type.dart';
+import 'providers/internet_provider.dart';
+import 'screens/mainpage.dart';
 import 'providers/sign_in_provider.dart';
 import 'utils.dart';
 import 'screens/loadingpage.dart';
 import 'screens/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import './screens/forgot_password_screen.dart';
+import 'screens/forgot_password_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,9 +37,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Scaffold(
+        home: Scaffold(
           // body: SingleChildScrollView(
-          body: ForgotPassword(),
+          body: MainPage(),
           // ),
         ),
       ),
