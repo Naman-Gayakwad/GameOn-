@@ -70,7 +70,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               )),
         ],
-        backgroundColor: Color(0xFFA32EEB),
+        backgroundColor: const Color(0xFFA32EEB),
         // shape: const RoundedRectangleBorder(
         //   borderRadius: BorderRadius.only(
         //     bottomLeft: Radius.circular(15),
@@ -96,15 +96,19 @@ class _MainPageState extends State<MainPage> {
                       label: "Home", icon: Icon(Icons.home)),
                   BottomNavigationBarItem(
                       label: "Learn & practice",
-                      icon: Icon(Icons.psychology_alt_sharp)),
+                      icon: Icon(Icons.psychology)),
                   BottomNavigationBarItem(
-                      label: "Contest", icon: Icon(Icons.leaderboard_outlined)),
+                      label: "Contest", 
+                      icon: Icon(Icons.leaderboard_outlined)),
                   BottomNavigationBarItem(
-                      label: "Coach", icon: Icon(Icons.co_present_rounded)),
+                      label: "Coach", 
+                      icon: Icon(Icons.co_present_rounded)),
                   BottomNavigationBarItem(
-                      label: "Store", icon: Icon(Icons.store)),
+                      label: "Store", 
+                      icon: Icon(Icons.store)),
                   BottomNavigationBarItem(
-                      label: "News", icon: Icon(Icons.newspaper))
+                      label: "News", 
+                      icon: Icon(Icons.newspaper))
                 ]),
     );
   }
