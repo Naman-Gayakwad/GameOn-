@@ -10,7 +10,8 @@ import '../utils/next_screen.dart';
 import '../utils/snack_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
-import 'package:provider/provider.dart';
+import '../type.dart';
+// import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -148,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               SnackBar(content: Text(error.toString())));
                         });
                         print(userCred);
-                        nextScreenReplace(context, SportType());
+                        nextScreenReplace(context, Type());
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.04,
@@ -265,7 +266,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         TextButton(
                             onPressed: () {
-                              nextScreenReplace(context, MainPage());
+                              nextScreenReplace(context, const Type());
                             },
                             child: Text(
                               'Skip for now',
@@ -315,7 +316,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // nextScreen(context, HomeScreen());
                 nextScreenReplace(
                   context,
-                  MainPage(),
+                  const Type(),
                 );
                 //user exist
               } else {
@@ -337,7 +338,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   handleAfterSignIn() {
     Future.delayed(const Duration(milliseconds: 1000)).then((value) {
-      nextScreenReplace(context, SportType());
+      nextScreenReplace(context, const Type());
     });
   }
 }

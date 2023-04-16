@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/mainpage.dart';
+import 'package:game_on/utils/next_screen.dart';
 
 class IndoorList extends StatefulWidget {
   const IndoorList({super.key});
@@ -19,7 +21,7 @@ class _IndoorListState extends State<IndoorList> {
     "Pool",
     "Table Tennis",
     "Yoga",
-    "Maditation",
+    "Meditation",
     "Arm Wrestling",
   ];
 
@@ -84,13 +86,21 @@ class _IndoorListState extends State<IndoorList> {
                 const SizedBox(
                   height: 20,
                 ),
-                ListView.builder(
-                  primary: false,
-                  shrinkWrap: true,
-                  itemCount: texts.length,
-                  itemBuilder: (context, index) {
-                    return item(index);
+                GestureDetector(
+                  onTap: () {
+                    nextScreen(
+                      context,
+                      MainPage(),
+                    );
                   },
+                  child: ListView.builder(
+                    primary: false,
+                    shrinkWrap: true,
+                    itemCount: texts.length,
+                    itemBuilder: (context, index) {
+                      return item(index);
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 50,
@@ -124,6 +134,10 @@ class _IndoorListState extends State<IndoorList> {
       child: GestureDetector(
         onTap: () {
           print("Selected Indoor Sport : ${texts[index]} ");
+          nextScreen(
+            context,
+            MainPage(),
+          );
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

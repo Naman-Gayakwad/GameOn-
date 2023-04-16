@@ -18,7 +18,8 @@ class _TypeState extends State<Type> {
     double ffem = fem * 0.97;
 
     return Scaffold(
-      body: SafeArea(
+      body: FittedBox(
+        fit: BoxFit.contain,
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
