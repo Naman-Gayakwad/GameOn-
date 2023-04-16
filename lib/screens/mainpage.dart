@@ -96,7 +96,7 @@ class _MainPageState extends State<MainPage> {
                       label: "Home", icon: Icon(Icons.home)),
                   BottomNavigationBarItem(
                       label: "Learn & practice",
-                      icon: Icon(Icons.psychology_alt_sharp)),
+                      icon: Icon(Icons.psychology)),
                   BottomNavigationBarItem(
                       label: "Contest", icon: Icon(Icons.leaderboard_outlined)),
                   BottomNavigationBarItem(
