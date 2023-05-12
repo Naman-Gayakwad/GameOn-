@@ -48,27 +48,12 @@ class _SceneState extends State<Scene> {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                'assets/images/page1img1.png',
+                'assets/images/17.png',
               ),
             ),
           ),
           child: Stack(
             children: [
-              Positioned(
-                // outlinedelhiindiacityskylinewi (96:126)
-                left: -17 * fem,
-                top: 569 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 463 * fem,
-                    height: 363 * fem,
-                    child: Image.asset(
-                      'assets/images/page1img2.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
               Positioned(
                 // finaliconremovebgpreview14LY (104:132)
                 left: 123 * fem,

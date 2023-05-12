@@ -1,15 +1,14 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'learn&practice.dart';
-import 'mainPageHomePageStacked.dart';
+import 'package:game_on/widgets/banner_widget.dart';
+// import 'learn&practice.dart';
+// import 'mainPageHomePageStacked.dart';
 import 'mainpage.dart';
 import '../utils/next_screen.dart';
 import '../utils.dart';
-import 'coach.dart';
-import 'contest.dart';
-import 'news.dart';
-import 'store.dart';
+// import 'coach.dart';
+// import 'contest.dart';
+// import 'news.dart';
+// import 'store.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -19,30 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List pages = const [
-    Home(),
-    LearnPractice(),
-    Contest(),
-    Coach(),
-    Store(),
-    News(),
-  ];
-  int currentIndex = 0;
-  void onTap(int index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
-
-  List imageList = [
-    {"id": 1, "image_path": 'assets/images/ipl.png'},
-    {"id": 2, "image_path": 'assets/images/football.png'},
-    {"id": 3, "image_path": 'assets/images/kabaddi.png'},
-    {"id": 4, "image_path": 'assets/images/pbl.png'},
-    {"id": 5, "image_path": 'assets/images/werstling.png'},
-  ];
-  final CarouselController carouselController = CarouselController();
-  // int currentIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     double baseWidth = 425;
@@ -55,63 +31,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.005,
             ),
-            InkWell(
-              onTap: () {
-                print(currentIndex);
-              },
-              child: CarouselSlider(
-                items: imageList
-                    .map(
-                      (item) => Image.asset(
-                        item['image_path'],
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    )
-                    .toList(),
-                carouselController: carouselController,
-                options: CarouselOptions(
-                  scrollPhysics: const BouncingScrollPhysics(),
-                  autoPlay: true,
-                  aspectRatio: 2,
-                  viewportFraction: 1,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                  },
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.001,
-            ),
-            Positioned(
-              bottom: 10,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: imageList.asMap().entries.map((entry) {
-                  return GestureDetector(
-                    onTap: () => carouselController.animateToPage(entry.key),
-                    child: Container(
-                      width: currentIndex == entry.key ? 17 : 7,
-                      height: 5.0,
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 3.0,
-                      ),
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
-                          color: currentIndex == entry.key
-                              ? Colors.red
-                              : Colors.teal),
-                    ),
-                  );
-                }).toList(),
-              ),
-            ),
+            const BannerWidget(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),

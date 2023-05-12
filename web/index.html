@@ -55,5 +55,32 @@
       });
     });
   </script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase_storage.js"></script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB37nj5FO4krsZagulhkJicb8vF2dtrPKk",
+      authDomain: "gameon-official.firebaseapp.com",
+      projectId: "gameon-official",
+      storageBucket: "gameon-official.appspot.com",
+      messagingSenderId: "273214355746",
+      appId: "1:273214355746:web:7b63c322f7ce52ec6e8d7b",
+      measurementId: "G-CERFBNMYQY"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
