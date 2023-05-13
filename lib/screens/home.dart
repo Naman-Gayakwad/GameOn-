@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.005,
             ),
-            const BannerWidget(),
+            BannerWidget(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),

@@ -308,21 +308,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                     SizedBox(
                       width: 17*fem,
                     ),
-                    Container(
-                      
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
-                      width: 110*fem,
-                      height: 110*fem,
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(55*fem),
-                        gradient: const LinearGradient (
-                          begin: Alignment(0, -1),
-                          end: Alignment(0, 1),
-                          colors: <Color>[Color(0xff51ef43), Color(0x6f97e2d4)],
-                          stops: <double>[0.052, 0.708],
-                        ),
-                      ),
-                    ),
+                   
                   ],
                 ),
               ),
