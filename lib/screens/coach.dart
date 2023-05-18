@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/be_a_mentor.dart';
 import 'package:game_on/utils.dart';
+import 'package:game_on/utils/next_screen.dart';
 
 class Coach extends StatefulWidget {
   const Coach({super.key});
@@ -26,15 +28,13 @@ class _CoachState extends State<Coach> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7.73 * fem, 41.58 * fem),
+              margin: EdgeInsets.fromLTRB(
+                  0 * fem, 0 * fem, 7.73 * fem, 41.58 * fem),
               width: 516.27 * fem,
               height: 489.42 * fem,
               child: Stack(
                 children: [
                   Positioned(
-                    
                     left: 42.2664489746 * fem,
                     top: 173.4208984375 * fem,
                     child: Align(
@@ -72,7 +72,6 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Positioned(
-                    
                     left: 0 * fem,
                     top: 0 * fem,
                     child: Align(
@@ -88,7 +87,6 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Positioned(
-                    
                     left: 244.2664489746 * fem,
                     top: 82.4208984375 * fem,
                     child: Align(
@@ -103,7 +101,6 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Positioned(
-                    
                     left: 17.2664489746 * fem,
                     top: 403.4208984375 * fem,
                     child: Container(
@@ -119,7 +116,6 @@ class _CoachState extends State<Coach> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                  
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 23 * fem, 0 * fem),
                             child: Text(
@@ -134,7 +130,6 @@ class _CoachState extends State<Coach> {
                             ),
                           ),
                           Container(
-                            
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 1 * fem, 0 * fem, 0 * fem),
                             width: 24 * fem,
@@ -149,25 +144,32 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Positioned(
-                    
                     left: 219.2664489746 * fem,
                     top: 403.4208984375 * fem,
-                    child: Container(
-                      width: 192 * fem,
-                      height: 52 * fem,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff000000)),
-                        borderRadius: BorderRadius.circular(9 * fem),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Be a Coach',
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: 22 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2125 * ffem / fem,
-                            color: Color(0xff000000),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          nextScreen(context, BeAMentorScreen());
+                        });
+                        ;
+                      },
+                      child: Container(
+                        width: 192 * fem,
+                        height: 52 * fem,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xff000000)),
+                          borderRadius: BorderRadius.circular(9 * fem),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Be a Mentor',
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 22 * ffem,
+                              fontWeight: FontWeight.w500,
+                              height: 1.2125 * ffem / fem,
+                              color: Color(0xff000000),
+                            ),
                           ),
                         ),
                       ),
@@ -177,9 +179,10 @@ class _CoachState extends State<Coach> {
               ),
             ),
             Container(
-              
-              margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 34 * fem, 41 * fem),
-              padding: EdgeInsets.fromLTRB(17 * fem, 11 * fem, 14 * fem, 4 * fem),
+              margin:
+                  EdgeInsets.fromLTRB(30 * fem, 0 * fem, 34 * fem, 41 * fem),
+              padding:
+                  EdgeInsets.fromLTRB(17 * fem, 11 * fem, 14 * fem, 4 * fem),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0xfface0f8),
@@ -189,9 +192,8 @@ class _CoachState extends State<Coach> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 66 * fem, 0 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 66 * fem, 0 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -211,7 +213,6 @@ class _CoachState extends State<Coach> {
                           ),
                         ),
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 0 * fem, 3 * fem),
                           child: Text(
@@ -229,9 +230,8 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 37 * fem, 8 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 37 * fem, 8 * fem),
                     child: Text(
                       'Chess course for Beginner ',
                       style: SafeGoogleFont(
@@ -244,15 +244,13 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(70 * fem, 0 * fem, 0 * fem, 0 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        70 * fem, 0 * fem, 0 * fem, 0 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 1 * fem, 11 * fem, 0 * fem),
                           width: 123 * fem,
@@ -275,7 +273,6 @@ class _CoachState extends State<Coach> {
                           ),
                         ),
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 0 * fem, 1 * fem),
                           width: 131 * fem,
@@ -304,9 +301,9 @@ class _CoachState extends State<Coach> {
               ),
             ),
             Container(
-              
               margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 34 * fem, 0 * fem),
-              padding: EdgeInsets.fromLTRB(15 * fem, 10 * fem, 14 * fem, 4 * fem),
+              padding:
+                  EdgeInsets.fromLTRB(15 * fem, 10 * fem, 14 * fem, 4 * fem),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0xfface0f8),
@@ -316,15 +313,13 @@ class _CoachState extends State<Coach> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 66 * fem, 3 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 66 * fem, 3 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 12 * fem, 0 * fem),
                           width: 48 * fem,
@@ -338,7 +333,6 @@ class _CoachState extends State<Coach> {
                           ),
                         ),
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 1 * fem, 0 * fem, 0 * fem),
                           child: Text(
@@ -356,9 +350,8 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(0 * fem, 0 * fem, 35 * fem, 8 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 35 * fem, 8 * fem),
                     child: Text(
                       'Chess course for Beginner ',
                       style: SafeGoogleFont(
@@ -371,15 +364,13 @@ class _CoachState extends State<Coach> {
                     ),
                   ),
                   Container(
-                    
-                    margin:
-                        EdgeInsets.fromLTRB(72 * fem, 0 * fem, 0 * fem, 0 * fem),
+                    margin: EdgeInsets.fromLTRB(
+                        72 * fem, 0 * fem, 0 * fem, 0 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 1 * fem, 11 * fem, 0 * fem),
                           width: 123 * fem,
@@ -402,7 +393,6 @@ class _CoachState extends State<Coach> {
                           ),
                         ),
                         Container(
-                          
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 0 * fem, 1 * fem),
                           width: 131 * fem,
