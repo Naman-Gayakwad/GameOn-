@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
         leading: GestureDetector(
           onTap: () {},
           child: const Icon(
-            Icons.account_circle,
+            Icons.menu,
             size: 30,
             color: Colors.black,
           ),
@@ -55,16 +55,6 @@ class _MainPageState extends State<MainPage> {
                 onTap: () {},
                 child: const Icon(
                   Icons.search,
-                  size: 30,
-                  color: Colors.black,
-                ),
-              )),
-          Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: const Icon(
-                  Icons.menu,
                   size: 30,
                   color: Colors.black,
                 ),
@@ -95,20 +85,15 @@ class _MainPageState extends State<MainPage> {
                   BottomNavigationBarItem(
                       label: "Home", icon: Icon(Icons.home)),
                   BottomNavigationBarItem(
-                      label: "Learn & practice",
-                      icon: Icon(Icons.psychology)),
+                      label: "Learn & practice", icon: Icon(Icons.psychology)),
                   BottomNavigationBarItem(
-                      label: "Contest", 
-                      icon: Icon(Icons.leaderboard_outlined)),
+                      label: "Contest", icon: Icon(Icons.leaderboard_outlined)),
                   BottomNavigationBarItem(
-                      label: "Coach", 
-                      icon: Icon(Icons.co_present_rounded)),
+                      label: "Coach", icon: Icon(Icons.co_present_rounded)),
                   BottomNavigationBarItem(
-                      label: "Store", 
-                      icon: Icon(Icons.store)),
+                      label: "Store", icon: Icon(Icons.store)),
                   BottomNavigationBarItem(
-                      label: "News", 
-                      icon: Icon(Icons.newspaper))
+                      label: "News", icon: Icon(Icons.newspaper))
                 ]),
     );
   }

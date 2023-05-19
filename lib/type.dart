@@ -26,6 +26,7 @@ class _TypeState extends State<Type> {
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
             image: DecorationImage(
+              fit: BoxFit.cover,
               image: AssetImage(
                 'assets/images/typeback.png',
               ),
