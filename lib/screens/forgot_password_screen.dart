@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import '../widgets/doublecircle_bgi.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -11,11 +11,57 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  TextEditingController forgotPasswordController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      String email = _emailController.text;
+      _resetPassword(email);
+    }
+  }
+
+  Future<void> _resetPassword(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Email Sent'),
+              content: Text('Please check your email to reset your password.'),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'))
+              ],
+            );
+          });
+    } catch (e) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Error'),
+              content: Text(
+                  'Failed to send password reset email. Please try again.'),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'))
+              ],
+            );
+          });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           const DoubleCircle(),
@@ -48,7 +94,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   const Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Text(
-                      'Email or Phone',
+                      'Reset password',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                     ),
@@ -64,27 +110,41 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           color: Colors.white,
                           border: Border.all(color: Colors.black)),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: TextField(
-                          controller: forgotPasswordController,
-                          onChanged: (value) {
-                            setState(() {});
-                          },
-                          decoration: const InputDecoration(
-                            icon: Icon(Icons.email),
-                            border: InputBorder.none,
-                            hintText: 'Enter your email',
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Form(
+                            key: _formKey,
+                            child: TextFormField(
+                              controller: _emailController,
+                              decoration: InputDecoration(
+                                  labelText: 'Enter registered email'),
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'please enter your registered email';
+                                }
+                                return null;
+                              },
+                            ),
+                          )
+                          // TextField(
+                          //   controller: _emailController,
+                          //   onChanged: (value) {
+                          //     setState(() {});
+                          //   },
+                          //   decoration: const InputDecoration(
+                          //     icon: Icon(Icons.email),
+                          //     border: InputBorder.none,
+                          //     hintText: 'Enter your email',
+                          //   ),
+                          //   keyboardType: TextInputType.emailAddress,
+                          // ),
                           ),
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                      ),
                     ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _submitForm,
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100)),

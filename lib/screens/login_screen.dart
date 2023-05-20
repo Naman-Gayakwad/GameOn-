@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:game_on/screens/create_account.dart';
 import 'forgot_password_screen.dart';
 import '../providers/internet_provider.dart';
 import '../providers/sign_in_provider.dart';
@@ -9,7 +10,9 @@ import '../utils/snack_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 import '../type.dart';
+
 // import 'package:provider/provider.dart';
+bool isLogin = true;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -38,9 +41,9 @@ class _LoginScreenState extends State<LoginScreen> {
             width: MediaQuery.of(context).size.width * 1.4,
             child: Container(
               decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/double_circle.png'),
-              fit: BoxFit.cover)),
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/double_circle.png'),
+                      fit: BoxFit.cover)),
             ),
             // Image.asset('assets/images/double_circle.png'),
           ),
@@ -250,7 +253,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: MediaQuery.of(context).size.height * 0.01,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        isLogin = false;
+                        nextScreenReplace(context, CreateAccount());
+                      },
                       child: const Text('Don\'t have an account? Create Now'),
                     ),
                     SizedBox(

@@ -3,6 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:game_on/screens/be_a_mentor.dart';
 import 'package:game_on/screens/coach.dart';
+import 'package:game_on/screens/create_account.dart';
+import 'package:game_on/screens/forgot_password_screen.dart';
+import 'package:game_on/screens/mainpage.dart';
+import 'package:game_on/screens/profile_page.dart';
 // import 'screens/home.dart';
 // import 'Sport_type.dart';
 import 'firebase_options.dart';
@@ -16,6 +20,7 @@ import 'package:provider/provider.dart';
 // import 'firebase_options.dart';
 // import 'screens/forgot_password_screen.dart';
 // import 'type.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,8 +65,19 @@ class MyApp extends StatelessWidget {
         ),
         home: const Scaffold(
           // body: SingleChildScrollView(
-          body: Scene(),
+          // body: StreamBuilder(
+          //   stream: FirebaseAuth.instance.authStateChanges(),
+          //   builder: (context, snapshot) {
+          //     if (snapshot.connectionState == ConnectionState.waiting) {
+          //       return const Scene();
+          //     }
+          //     if (snapshot.hasData) {
+          //       return MainPage();
+          //     }
+          //     return const Scene();
+          //   },
           // ),
+          body: Scene(),
         ),
       ),
     );
