@@ -52,6 +52,7 @@ class _OutdoorListState extends State<OutdoorList> {
           decoration: const BoxDecoration(
             color: Color.fromARGB(255, 236, 236, 236),
             image: DecorationImage(
+              fit: BoxFit.cover,
               image: AssetImage(
                 'assets/images/typeback.png',
               ),
