@@ -2,7 +2,7 @@
     package="com.example.game_on">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
-        android:label="game_on"
+        android:label="GameOn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
