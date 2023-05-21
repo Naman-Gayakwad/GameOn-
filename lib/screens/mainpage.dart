@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:game_on/widgets/button_widget.dart';
+import 'package:game_on/widgets/navigation_drawer_widget.dart';
 
 import 'coach.dart';
 import 'contest.dart';
@@ -9,6 +12,7 @@ import 'history.dart';
 import 'store.dart';
 
 class MainPage extends StatefulWidget {
+  static final String title = 'Navigation Drawer';
   int? tapIndex;
   MainPage({super.key, this.tapIndex});
 
@@ -37,17 +41,18 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: const Text("GameON"),
-        titleTextStyle: TextStyle(fontSize: 25, color: Colors.black),
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(
-            Icons.menu,
-            size: 30,
-            color: Colors.black,
-          ),
-        ),
+        titleTextStyle: TextStyle(fontSize: 25, color: Colors.white),
+        // leading: GestureDetector(
+        //   onTap: () {},
+        //   child: const Icon(
+        //     Icons.menu,
+        //     size: 30,
+        //     color: Colors.black,
+        //   ),
+        // ),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -56,7 +61,7 @@ class _MainPageState extends State<MainPage> {
                 child: const Icon(
                   Icons.search,
                   size: 30,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               )),
         ],
