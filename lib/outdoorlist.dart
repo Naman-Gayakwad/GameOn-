@@ -46,7 +46,7 @@ class _OutdoorListState extends State<OutdoorList> {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                'assets/images/typeback.png',
+                'assets/images/123.png',
               ),
             ),
           ),
@@ -58,7 +58,7 @@ class _OutdoorListState extends State<OutdoorList> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 30,
+                  height: 40,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -78,7 +78,7 @@ class _OutdoorListState extends State<OutdoorList> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 StreamBuilder<QuerySnapshot>(
                     stream: _outdoorlistStream,
