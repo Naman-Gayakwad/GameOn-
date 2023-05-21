@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:game_on/screens/create_account.dart';
+import 'create_account.dart';
 import 'forgot_password_screen.dart';
 import '../providers/internet_provider.dart';
 import '../providers/sign_in_provider.dart';

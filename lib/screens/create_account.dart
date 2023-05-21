@@ -1,9 +1,12 @@
+import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/login_screen.dart';
-import 'package:game_on/utils/next_screen.dart';
-import 'package:game_on/widgets/doublecircle_bgi.dart';
+import 'package:game_on/widgets/image_picker.dart';
+import 'login_screen.dart';
+import '../utils/next_screen.dart';
+import '../widgets/doublecircle_bgi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 final _firebase = FirebaseAuth.instance;
 bool result = false;
@@ -21,6 +24,7 @@ class _CreateAccountState extends State<CreateAccount> {
   var _enteredEmail = '';
   var _enteredPassword = '';
   var _enteredMobileNo = '';
+  File? _selectedImage;
   void _submit() async {
     final isValid = _formKey.currentState!.validate();
     if (isValid) {
@@ -44,6 +48,14 @@ class _CreateAccountState extends State<CreateAccount> {
           final userCredentials =
               await _firebase.createUserWithEmailAndPassword(
                   email: _enteredEmail, password: _enteredPassword);
+          final storageRef = FirebaseStorage.instance
+              .ref()
+              .child('user_images')
+              .child('${userCredentials.user!.uid}.jpg');
+
+          await storageRef.putFile(_selectedImage!);
+          final imageUrl = await storageRef.getDownloadURL();
+          print(imageUrl);
           // ignore: use_build_context_synchronously
           showDialog(
               context: context,
@@ -66,6 +78,9 @@ class _CreateAccountState extends State<CreateAccount> {
           );
         }
       }
+      if (_selectedImage == null) {
+        return;
+      }
     }
   }
 
@@ -82,7 +97,7 @@ class _CreateAccountState extends State<CreateAccount> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.15,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 const Align(
                   alignment: Alignment.center,
@@ -92,11 +107,16 @@ class _CreateAccountState extends State<CreateAccount> {
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                UserImagePicker(
+                  onPickImage: (pickedImage) {
+                    _selectedImage = pickedImage;
+                  },
+                ),
                 Container(
                   padding:
                       const EdgeInsets.only(left: 10, top: 5.0, bottom: 5.0),
                   width: MediaQuery.of(context).size.width * 0.85,
-                  height: MediaQuery.of(context).size.height * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.40,
                   decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.9),
                       borderRadius: BorderRadius.circular(30)),
@@ -156,7 +176,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         ),
                         TextFormField(
                           decoration: const InputDecoration(
-                              labelText: 'Enter your Mobile Number*'),
+                              labelText: 'Enter your Mobile Number'),
                           onSaved: (newValue) {
                             _enteredMobileNo = newValue!;
                           },
@@ -219,7 +239,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           nextScreenReplace(context, const LoginScreen());
                         },
                         child: const Text(
-                          'SignIn',
+                          'Sign-in',
                           style: TextStyle(
                               fontSize: 20,
                               color: Color.fromRGBO(151, 51, 238, 1)),

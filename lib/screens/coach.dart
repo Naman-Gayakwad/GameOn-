@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/be_a_mentor.dart';
-import 'package:game_on/utils.dart';
-import 'package:game_on/utils/next_screen.dart';
+import 'be_a_mentor.dart';
+import '../utils.dart';
+import '../utils/next_screen.dart';
 
 class Coach extends StatefulWidget {
   const Coach({super.key});
@@ -16,14 +16,14 @@ class _CoachState extends State<Coach> {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
-      // E5L (1:69)
-      padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 150 * fem),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Color(0xffffffff),
-      ),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Container(
+        // E5L (1:69)
+        padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 150 * fem),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Color(0xffffffff),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

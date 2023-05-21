@@ -1,12 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/be_a_mentor.dart';
-import 'package:game_on/screens/coach.dart';
-import 'package:game_on/screens/create_account.dart';
-import 'package:game_on/screens/forgot_password_screen.dart';
-import 'package:game_on/screens/mainpage.dart';
-import 'package:game_on/screens/profile_page.dart';
+import 'screens/be_a_mentor.dart';
+import 'screens/coach.dart';
+import 'screens/create_account.dart';
+import 'screens/forgot_password_screen.dart';
+import 'screens/mainpage.dart';
+import 'screens/people_page.dart';
+import 'screens/profile_page.dart';
+import 'screens/user_page.dart';
+import 'widgets/navigation_drawer_widget.dart';
 // import 'screens/home.dart';
 // import 'Sport_type.dart';
 import 'firebase_options.dart';
@@ -63,7 +66,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Scaffold(
+        home: Scaffold(
           // body: SingleChildScrollView(
           // body: StreamBuilder(
           //   stream: FirebaseAuth.instance.authStateChanges(),

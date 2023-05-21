@@ -1,7 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/favourites_page.dart';
-import 'package:game_on/screens/people_page.dart';
-import 'package:game_on/screens/user_page.dart';
+import '../screens/favourites_page.dart';
+import '../screens/people_page.dart';
+import '../screens/user_page.dart';
+import '../screens/create_account.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -14,7 +17,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(186, 44, 241, 1),
+        color: const Color(0xFFA32EEB).withOpacity(0.8),
         child: ListView(
           children: <Widget>[
             buildHeader(
