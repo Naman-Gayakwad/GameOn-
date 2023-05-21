@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/utils.dart';
+import '../utils.dart';
 
 class Store extends StatefulWidget {
   const Store({super.key});

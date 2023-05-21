@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/be_a_mentor.dart';
-import 'package:game_on/utils.dart';
-import 'package:game_on/utils/next_screen.dart';
+import 'be_a_mentor.dart';
+import '../utils.dart';
+import '../utils/next_screen.dart';
 
 class Coach extends StatefulWidget {
   const Coach({super.key});

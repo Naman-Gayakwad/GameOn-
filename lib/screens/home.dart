@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/widgets/banner_widget.dart';
+import '../widgets/banner_widget.dart';
 // import 'learn&practice.dart';
 // import 'mainPageHomePageStacked.dart';
 import 'mainpage.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/screens/mainpage.dart';
-import 'package:game_on/utils/next_screen.dart';
+import 'screens/mainpage.dart';
+import 'utils/next_screen.dart';
 
 class OutdoorList extends StatefulWidget {
   const OutdoorList({super.key});

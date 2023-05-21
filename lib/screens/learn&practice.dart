@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/utils.dart';
+import '../utils.dart';
 // import 'coach.dart';
 // import 'contest.dart';
 // import 'home.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_on/utils.dart';
+import '../utils.dart';
 
 class Contest extends StatefulWidget {
   const Contest({super.key});

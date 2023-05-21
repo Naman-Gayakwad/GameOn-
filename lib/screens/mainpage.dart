@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:game_on/widgets/button_widget.dart';
-import 'package:game_on/widgets/navigation_drawer_widget.dart';
+import '../widgets/button_widget.dart';
+import '../widgets/navigation_drawer_widget.dart';
 
 import 'coach.dart';
 import 'contest.dart';
