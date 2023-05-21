@@ -16,8 +16,6 @@ class _IndoorListState extends State<IndoorList> {
 
   bool startAnimation = false;
 
-  
-
   @override
   void initState() {
     super.initState();
@@ -128,7 +126,7 @@ class _IndoorListState extends State<IndoorList> {
                               child: GestureDetector(
                                 onTap: () {
                                   print(
-                                      "Selected Indoor Sport : $indoorlistData['sportName'] ");
+                                      "Selected Indoor Sport : ${indoorlistData['sportName']} ");
                                   nextScreen(
                                     context,
                                     MainPage(),

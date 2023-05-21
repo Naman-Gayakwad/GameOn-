@@ -141,7 +141,7 @@ class _NewsState extends State<News> {
             : news.isEmpty
                 ? const Center(
                     child: CircularProgressIndicator(
-                      backgroundColor: Colors.yellow,
+                      backgroundColor: Colors.purple,
                     ),
                   )
                 : ListView.builder(
@@ -243,7 +243,7 @@ class _NewsState extends State<News> {
                           if (index == news.length - 1 && isLoading)
                             const Center(
                               child: CircularProgressIndicator(
-                                backgroundColor: Colors.yellow,
+                                backgroundColor: Colors.purple,
                               ),
                             )
                           else

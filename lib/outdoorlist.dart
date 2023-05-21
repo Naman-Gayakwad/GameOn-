@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'screens/mainpage.dart';
 import 'utils/next_screen.dart';
@@ -15,17 +16,6 @@ class _OutdoorListState extends State<OutdoorList> {
 
   bool startAnimation = false;
 
-  List<String> texts = [
-    "Cricket",
-    "Football",
-    "Athelatics",
-    "Swimming",
-    "Badminton",
-    "Kabaddi",
-    "Basktball",
-    "Volleyball",
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -39,6 +29,8 @@ class _OutdoorListState extends State<OutdoorList> {
 
   @override
   Widget build(BuildContext context) {
+    final Stream<QuerySnapshot> _outdoorlistStream =
+        FirebaseFirestore.instance.collection('outdoorlist').snapshots();
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     double baseWidth = 430;
@@ -77,7 +69,7 @@ class _OutdoorListState extends State<OutdoorList> {
                     // });
                   },
                   child: const Text(
-                    "Out-Door",
+                    "In-Door",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
@@ -88,70 +80,83 @@ class _OutdoorListState extends State<OutdoorList> {
                 const SizedBox(
                   height: 20,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    nextScreen(
-                      context,
-                      MainPage(),
-                    );
-                  },
-                  child: ListView.builder(
-                    primary: false,
-                    shrinkWrap: true,
-                    itemCount: texts.length,
-                    itemBuilder: (context, index) {
-                      return item(index);
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
+                StreamBuilder<QuerySnapshot>(
+                    stream: _outdoorlistStream,
+                    builder: (BuildContext context,
+                        AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (snapshot.hasError) {
+                        return const Text('Something went wrong');
+                      }
+
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Text("Loading");
+                      }
+
+                      return GestureDetector(
+                        onTap: () {
+                          nextScreen(
+                            context,
+                            MainPage(),
+                          );
+                        },
+                        child: ListView.builder(
+                          primary: false,
+                          shrinkWrap: true,
+                          itemCount: snapshot.data!.docs.length,
+                          itemBuilder: (context, index) {
+                            final outdoorlistData = snapshot.data!.docs[index];
+                            return AnimatedContainer(
+                              height: 70,
+                              width: screenWidth,
+                              curve: Curves.easeInOut,
+                              duration:
+                                  Duration(milliseconds: 300 + (index * 200)),
+                              transform: Matrix4.translationValues(
+                                  startAnimation ? 0 : screenWidth, 0, 0),
+                              margin: const EdgeInsets.only(
+                                bottom: 12,
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: screenWidth / 20,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFE0EAFC),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  print(
+                                      "Selected Indoor Sport : ${outdoorlistData['outdoorsportName']} ");
+                                  nextScreen(
+                                    context,
+                                    MainPage(),
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      outdoorlistData['outdoorsportName'],
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 50,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    }),
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget item(int index) {
-    return AnimatedContainer(
-      height: 70,
-      width: screenWidth,
-      curve: Curves.easeInOut,
-      duration: Duration(milliseconds: 300 + (index * 200)),
-      transform:
-          Matrix4.translationValues(startAnimation ? 0 : screenWidth, 0, 0),
-      margin: const EdgeInsets.only(
-        bottom: 12,
-      ),
-      padding: EdgeInsets.symmetric(
-        horizontal: screenWidth / 20,
-      ),
-      decoration: BoxDecoration(
-        color: const Color(0xFFE0EAFC),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: GestureDetector(
-        onTap: () {
-          print("Selected Outdoor Sport  : ${texts[index]} ");
-          nextScreen(
-            context,
-            MainPage(),
-          );
-        },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "${texts[index]}",
-              style: const TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-          ],
         ),
       ),
     );

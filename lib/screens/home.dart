@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
               height: MediaQuery.of(context).size.height * 0.02,
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 11 * fem),
+              margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 0 * fem, 11 * fem),
               width: double.infinity,
               height: 150 * fem,
               child: Stack(
@@ -247,7 +247,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(9 * fem, 0 * fem, 0 * fem, 0 * fem),
+              margin: EdgeInsets.fromLTRB(18 * fem, 0 * fem, 0 * fem, 11 * fem),
               height: 143 * fem,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
