@@ -28,6 +28,14 @@ class _FeedbackPageState extends State<FeedbackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: const Color(0xFFA32EEB),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new_outlined),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )),
       resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
@@ -38,7 +46,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.15,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 const Align(
                   alignment: Alignment.center,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:game_on/widgets/store_grids.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/navigation_drawer_widget.dart';
 
@@ -21,12 +22,12 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List pages = const [
+  List pages = [
     Home(),
     LearnPractice(),
     Contest(),
     Coach(),
-    Store(),
+    StoreGrid(),
     News(),
     History(),
   ];
