@@ -46,7 +46,7 @@ class _SceneState extends State<Scene> {
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
             image: DecorationImage(
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               image: AssetImage(
                 'assets/images/17.png',
               ),

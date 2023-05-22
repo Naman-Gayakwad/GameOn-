@@ -26,9 +26,9 @@ class _TypeState extends State<Type> {
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
             image: DecorationImage(
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               image: AssetImage(
-                'assets/images/typeback.png',
+                'assets/images/123.png',
               ),
             ),
           ),
@@ -49,8 +49,8 @@ class _TypeState extends State<Type> {
                         fontSize: 32 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.2125 * ffem / fem,
-                        fontStyle: FontStyle.italic,
-                        color: Color(0xff000000),
+                        fontStyle: FontStyle.normal,
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                   ),
