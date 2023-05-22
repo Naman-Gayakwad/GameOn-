@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/contactus.dart';
+import 'package:game_on/screens/feedback_page.dart';
 import '../screens/favourites_page.dart';
+import '../screens/login_screen.dart';
 import '../screens/people_page.dart';
 import '../screens/user_page.dart';
 import '../screens/create_account.dart';
@@ -39,41 +42,53 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildSearchField(),
                   const SizedBox(height: 24),
                   buildMenuItem(
-                    text: 'People',
-                    icon: Icons.people,
+                    text: 'Notifications',
+                    icon: Icons.notifications_active_outlined,
                     onClicked: () => selectedItem(context, 0),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Favourites',
-                    icon: Icons.favorite_border,
+                    text: 'Your Orders',
+                    icon: Icons.payment_outlined,
                     onClicked: () => selectedItem(context, 1),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Workflow',
+                    text: 'Social Network',
                     icon: Icons.workspaces_outline,
                     onClicked: () => selectedItem(context, 2),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Updates',
-                    icon: Icons.update,
+                    text: 'Settings',
+                    icon: Icons.settings_applications_outlined,
                     onClicked: () => selectedItem(context, 3),
                   ),
                   const SizedBox(height: 24),
                   Divider(color: Colors.white70),
                   const SizedBox(height: 24),
                   buildMenuItem(
-                    text: 'Plugins',
-                    icon: Icons.account_tree_outlined,
+                    text: 'Contact Us',
+                    icon: Icons.contact_page_outlined,
                     onClicked: () => selectedItem(context, 4),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Notifications',
-                    icon: Icons.notifications_outlined,
+                    text: 'About us',
+                    icon: Icons.people_alt_outlined,
                     onClicked: () => selectedItem(context, 5),
+                  ),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'Feedback',
+                    icon: Icons.feedback_outlined,
+                    onClicked: () => selectedItem(context, 6),
+                  ),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'Signout',
+                    icon: Icons.logout_outlined,
+                    onClicked: () => selectedItem(context, 7),
                   ),
                 ],
               ),
@@ -176,6 +191,19 @@ class NavigationDrawerWidget extends StatelessWidget {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => FavouritesPage(),
         ));
+        break;
+         case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const ContactUsPage(),
+        ));
+        break;
+      case 6:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => FeedbackPage(),
+        ));
+        break;
+      case 7:
+        FirebaseAuth.instance.signOut();
         break;
     }
   }

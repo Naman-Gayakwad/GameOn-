@@ -49,14 +49,14 @@ dependencies:
   rounded_loading_button: ^2.1.0
   shared_preferences: ^2.1.0
   snippet_coder_utils: ^1.0.13
+  url_launcher: ^6.1.11
   webview_flutter: ^3.0.4
-  
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
 flutter_icons:
   android: true
@@ -64,7 +64,6 @@ flutter_icons:
   image_path: "assets/images/logo.png"
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/images/logo.png"
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

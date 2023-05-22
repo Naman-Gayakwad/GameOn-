@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import '../widgets/banner_widget.dart';
 // import 'learn&practice.dart';
@@ -18,7 +20,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
+  bool showText = false;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 425;
@@ -449,6 +451,175 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            Container(
+              padding: EdgeInsets.only(left: 18.0, right: 18.0),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Explore Opportunities',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFFA32EEB)),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.008,
+                    ),
+                    Text(
+                      'Play, showcase skills and build your strong community through online or offline opportunities of your interest and make your mark!',
+                      style: TextStyle(
+                          color: const Color(0xFFA32EEB).withOpacity(0.8)),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.008,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            color: const Color(0xFFA32EEB).withOpacity(0.1),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15)),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                child: Image.asset(
+                                  'assets/images/under16final.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.008,
+                              ),
+                              Text(
+                                'Under 16',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.purple),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.07,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            color: const Color(0xFFA32EEB).withOpacity(0.1),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15)),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                child: Image.asset(
+                                  'assets/images/under16.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.008,
+                              ),
+                              Text(
+                                'Under 19',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.purple),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            color: const Color(0xFFA32EEB).withOpacity(0.1),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15)),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                child: Image.asset(
+                                  'assets/images/under21.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.008,
+                              ),
+                              Text(
+                                'Above 21',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.purple),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.07,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            color: const Color(0xFFA32EEB).withOpacity(0.1),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15)),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                child: Image.asset(
+                                  'assets/images/specialwomenfinal.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.008,
+                              ),
+                              Text(
+                                'For Women',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.purple),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  ]),
+            )
           ],
         ),
       ),
