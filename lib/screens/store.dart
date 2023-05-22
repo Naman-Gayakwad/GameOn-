@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../utils.dart';
@@ -234,7 +232,4 @@ class _StoreState extends State<Store> {
     // );
   }
 }
-=======
->>>>>>> 47ff5b6fb111a8729b4c51280b6d9d0a5bc39923
-=======
->>>>>>> 47ff5b6fb111a8729b4c51280b6d9d0a5bc39923
+
