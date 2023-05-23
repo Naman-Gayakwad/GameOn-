@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:game_on/screens/contactus.dart';
 import 'package:game_on/screens/store.dart';
 import 'package:game_on/widgets/store_grids.dart';
+import 'package:game_on/widgets/video_tile.dart';
 import 'screens/be_a_mentor.dart';
 import 'screens/coach.dart';
 import 'screens/create_account.dart';
