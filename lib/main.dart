@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         scrollBehavior: MyCustomScrollBehavior(),
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
         ),
         home: Scaffold(
           // body: SingleChildScrollView(
@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
           //     return const Scene();
           //   },
           // ),
-          body: Scene(),
+          body: ProfilePage(),
         ),
       ),
     );
