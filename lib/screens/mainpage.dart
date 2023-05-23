@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
     LearnPractice(),
     Contest(),
     Coach(),
-    StoreGrid(),
+    Store(),
     News(),
     History(),
   ];

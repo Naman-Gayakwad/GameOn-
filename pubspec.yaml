@@ -50,7 +50,9 @@ dependencies:
   shared_preferences: ^2.1.0
   snippet_coder_utils: ^1.0.13
   url_launcher: ^6.1.11
+  video_player: ^2.6.1
   webview_flutter: ^3.0.4
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
