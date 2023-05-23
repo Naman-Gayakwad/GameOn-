@@ -73,7 +73,7 @@ class _IndoorListState extends State<IndoorList> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: Colors.black87,
                     ),
                   ),
                 ),
@@ -89,7 +89,11 @@ class _IndoorListState extends State<IndoorList> {
                       }
 
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Text("Loading");
+                        return Center(
+            child: CircularProgressIndicator(
+              color: Colors.orangeAccent,
+            ),
+          );
                       }
 
                       return GestureDetector(
@@ -121,7 +125,7 @@ class _IndoorListState extends State<IndoorList> {
                               ),
                               decoration: BoxDecoration(
                                 color: const Color(0xFFE0EAFC),
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(14),
                               ),
                               child: GestureDetector(
                                 onTap: () {

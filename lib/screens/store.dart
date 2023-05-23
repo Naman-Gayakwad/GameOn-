@@ -59,7 +59,7 @@ class _StoreState extends State<Store> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('\₹' + productData['price'].toStringAsFixed(2), style: 
+                        child: Text('\₹' + productData['price'].toString(), style: 
                         TextStyle(
                           fontSize: 18, 
                           fontWeight: FontWeight.bold, 
