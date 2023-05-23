@@ -25,23 +25,54 @@ class _StoreState extends State<Store> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Center(
+            child: CircularProgressIndicator(
+              color: Colors.purple,
+            ),
+          );
         }
 
-        return SingleChildScrollView(
-          child: Container(
-            height: 370,
-            child: ListView.separated(
-                itemBuilder: (context, index) {
-                  final productData = snapshot.data!.docs[index];
-                  return Image.network(productData['image']);
-                },
-                separatorBuilder: (context, _) => SizedBox(
-                      width: 15,
-                    ),
-                itemCount: snapshot.data!.docs.length),
-          ),
-        );
+        return GridView.builder(
+            itemCount: snapshot.data!.size,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 200 / 300),
+            itemBuilder: (context, index) {
+              final productData = snapshot.data!.docs[index];
+              return GestureDetector(
+                onTap: (){},
+                child: Card(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 170,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: NetworkImage(productData['image']))
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(productData['productName'], style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 2),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('\₹' + productData['price'].toString(), style: 
+                        TextStyle(
+                          fontSize: 18, 
+                          fontWeight: FontWeight.bold, 
+                          letterSpacing: 2,
+                          color: Colors.purpleAccent,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            });
       },
     );
     //  SingleChildScrollView(
@@ -232,4 +263,3 @@ class _StoreState extends State<Store> {
     // );
   }
 }
-
