@@ -20,7 +20,10 @@ class _ProductDetailState extends State<ProductDetail> {
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        title: Text(widget.productData['productName'], style: TextStyle(color: Colors.black),),
+        title: Text(
+          widget.productData['productName'],
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Column(
         children: [
@@ -29,7 +32,8 @@ class _ProductDetailState extends State<ProductDetail> {
               Container(
                 height: 300,
                 width: double.infinity,
-                child: PhotoView(imageProvider: NetworkImage(widget.productData['image']),
+                child: PhotoView(
+                  imageProvider: NetworkImage(widget.productData['image']),
                 ),
               ),
               // Positioned(child: Container(
@@ -39,8 +43,17 @@ class _ProductDetailState extends State<ProductDetail> {
             ],
           ),
           SizedBox(height: 20),
-          Text('\₹' + widget.productData['price'].toString(),style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.yellowAccent),),
-          Text('\₹' + widget.productData['productName'].toString(),style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+          Text(
+            '\₹' + widget.productData['price'].toString(),
+            style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.orangeAccent),
+          ),
+          Text(
+            '\₹' + widget.productData['productName'].toString(),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );

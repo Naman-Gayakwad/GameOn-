@@ -40,12 +40,16 @@ class _StoreState extends State<Store> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
-                childAspectRatio: 200 / 300),
+                childAspectRatio: 190 / 300),
             itemBuilder: (context, index) {
               final productData = snapshot.data!.docs[index];
               return GestureDetector(
                 onTap: () {
-                  nextScreenReplace(context, ProductDetail(productData: productData,));
+                  nextScreenReplace(
+                      context,
+                      ProductDetail(
+                        productData: productData,
+                      ));
                 },
                 child: Card(
                   child: Column(
