@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/bookcourse.dart';
 import 'be_a_mentor.dart';
 import '../utils.dart';
 import '../utils/next_screen.dart';
@@ -178,126 +179,132 @@ class _CoachState extends State<Coach> {
                 ],
               ),
             ),
-            Container(
-              margin:
-                  EdgeInsets.fromLTRB(30 * fem, 0 * fem, 34 * fem, 41 * fem),
-              padding:
-                  EdgeInsets.fromLTRB(17 * fem, 11 * fem, 14 * fem, 4 * fem),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xfface0f8),
-                borderRadius: BorderRadius.circular(18 * fem),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 66 * fem, 0 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // image24uwU (1:136)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 11 * fem, 0 * fem),
-                          width: 47 * fem,
-                          height: 50 * fem,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(13 * fem),
-                            child: Image.asset(
-                              'assets/images/image-24.png',
-                              fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                nextScreenReplace(context, bookcourse());
+                ;
+              },
+              child: Container(
+                margin:
+                    EdgeInsets.fromLTRB(30 * fem, 0 * fem, 34 * fem, 41 * fem),
+                padding:
+                    EdgeInsets.fromLTRB(17 * fem, 11 * fem, 14 * fem, 4 * fem),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Color(0xfface0f8),
+                  borderRadius: BorderRadius.circular(18 * fem),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 66 * fem, 0 * fem),
+                      width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            // image24uwU (1:136)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 11 * fem, 0 * fem),
+                            width: 47 * fem,
+                            height: 50 * fem,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(13 * fem),
+                              child: Image.asset(
+                                'assets/images/image-24.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 3 * fem),
-                          child: Text(
-                            'Viswanathan Anand',
-                            style: SafeGoogleFont(
-                              'Inter',
-                              fontSize: 22 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2125 * ffem / fem,
-                              color: Color(0xff000000),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 0 * fem, 3 * fem),
+                            child: Text(
+                              'Viswanathan Anand',
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 22 * ffem,
+                                fontWeight: FontWeight.w500,
+                                height: 1.2125 * ffem / fem,
+                                color: Color(0xff000000),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 37 * fem, 8 * fem),
-                    child: Text(
-                      'Chess course for Beginner ',
-                      style: SafeGoogleFont(
-                        'Inter',
-                        fontSize: 14 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.2125 * ffem / fem,
-                        color: Color(0xff000000),
+                        ],
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(
-                        70 * fem, 0 * fem, 0 * fem, 0 * fem),
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 1 * fem, 11 * fem, 0 * fem),
-                          width: 123 * fem,
-                          height: 31 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                            borderRadius: BorderRadius.circular(12 * fem),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Buy Course ',
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: 16 * ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.2125 * ffem / fem,
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 37 * fem, 8 * fem),
+                      child: Text(
+                        'Chess course for Beginner ',
+                        style: SafeGoogleFont(
+                          'Inter',
+                          fontSize: 14 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2125 * ffem / fem,
+                          color: Color(0xff000000),
                         ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 1 * fem),
-                          width: 131 * fem,
-                          height: 31 * fem,
-                          decoration: BoxDecoration(
-                            color: Color(0xff6285ff),
-                            borderRadius: BorderRadius.circular(12 * fem),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Book a live lesson',
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: 14 * ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 1.2125 * ffem / fem,
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: EdgeInsets.fromLTRB(
+                          70 * fem, 0 * fem, 0 * fem, 0 * fem),
+                      width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 1 * fem, 11 * fem, 0 * fem),
+                            width: 123 * fem,
+                            height: 31 * fem,
+                            decoration: BoxDecoration(
+                              color: Color(0xffd9d9d9),
+                              borderRadius: BorderRadius.circular(12 * fem),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Buy Course ',
+                                style: SafeGoogleFont(
+                                  'Inter',
+                                  fontSize: 16 * ffem,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.2125 * ffem / fem,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 0 * fem, 1 * fem),
+                            width: 131 * fem,
+                            height: 31 * fem,
+                            decoration: BoxDecoration(
+                              color: Color(0xff6285ff),
+                              borderRadius: BorderRadius.circular(12 * fem),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Book a live lesson',
+                                style: SafeGoogleFont(
+                                  'Inter',
+                                  fontSize: 14 * ffem,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.2125 * ffem / fem,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Container(
