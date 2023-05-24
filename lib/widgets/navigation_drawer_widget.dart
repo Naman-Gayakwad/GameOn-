@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:game_on/screens/contactus.dart';
 import 'package:game_on/screens/feedback_page.dart';
 import 'package:game_on/screens/profile_page.dart';
+import 'package:game_on/screens/settings_page.dart';
 // import '../screens/favourites_page.dart';
 import '../screens/login_screen.dart';
 import '../screens/people_page.dart';
@@ -198,7 +199,17 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => SocialNetwork(),
         ));
         break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => SettingsPage(),
+        ));
+        break;
       case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const ContactUsPage(),
+        ));
+        break;
+        case 5:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const ContactUsPage(),
         ));

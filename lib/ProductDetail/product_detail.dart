@@ -15,6 +15,7 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         elevation: 0,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
@@ -24,6 +25,7 @@ class _ProductDetailState extends State<ProductDetail> {
           widget.productData['productName'],
           style: TextStyle(color: Colors.black),
         ),
+        
       ),
       body: Column(
         children: [
