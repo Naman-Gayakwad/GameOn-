@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:game_on/utils/next_screen.dart';
 import 'package:game_on/widgets/store_grids.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/navigation_drawer_widget.dart';
@@ -44,7 +45,11 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: const Text("GameON"),
+        title:  TextButton(onPressed: (){nextScreen(
+                            context,
+                            MainPage(
+                              tapIndex: 0,
+                            ));}, child: Text('GameOn',style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold),)),
         titleTextStyle: TextStyle(fontSize: 25, color: Colors.white),
         // leading: GestureDetector(
         //   onTap: () {},
