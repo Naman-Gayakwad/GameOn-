@@ -2,19 +2,24 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:game_on/screens/contactus.dart';
 import 'package:game_on/screens/feedback_page.dart';
-import '../screens/favourites_page.dart';
+import 'package:game_on/screens/profile_page.dart';
+import 'package:game_on/screens/settings_page.dart';
+// import '../screens/favourites_page.dart';
 import '../screens/login_screen.dart';
 import '../screens/people_page.dart';
+import '../screens/socialnetwork.dart';
 import '../screens/user_page.dart';
 import '../screens/create_account.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../screens/your_orders.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
   @override
   Widget build(BuildContext context) {
-    final name = 'Neel Jain';
-    final email = 'nj20@gmail.com';
+    final name = 'Vinayak Mishra';
+    final email = 'v@Gameon.com';
     final urlImage =
         'https://images.unsplash.com/photo-1649503116494-b07b8f561c21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym95cyUyMGRwfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60';
 
@@ -28,10 +33,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               name: name,
               email: email,
               onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => UserPage(
-                  name: 'Neel Jain',
-                  urlImage: urlImage,
-                ),
+                builder: (context) => ProfilePage(),
               )),
             ),
             Container(
@@ -40,12 +42,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                 children: [
                   const SizedBox(height: 12),
                   buildSearchField(),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Notifications',
-                    icon: Icons.notifications_active_outlined,
-                    onClicked: () => selectedItem(context, 0),
-                  ),
+                  // const SizedBox(height: 24),
+                  // buildMenuItem(
+                  //   text: 'Notifications',
+                  //   icon: Icons.notifications_active_outlined,
+                  //   onClicked: () => selectedItem(context, 0),
+                  // ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Your Orders',
@@ -189,10 +191,25 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
       case 1:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => FavouritesPage(),
+          builder: (context) => YourOrders(),
         ));
         break;
-         case 4:
+      case 2:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => SocialNetwork(),
+        ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => SettingsPage(),
+        ));
+        break;
+      case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const ContactUsPage(),
+        ));
+        break;
+        case 5:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const ContactUsPage(),
         ));
@@ -203,7 +220,10 @@ class NavigationDrawerWidget extends StatelessWidget {
         ));
         break;
       case 7:
-        FirebaseAuth.instance.signOut();
+        // FirebaseAuth.instance.signOut();
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => LoginScreen(),
+        ));
         break;
     }
   }
