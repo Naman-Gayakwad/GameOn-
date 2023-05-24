@@ -16,6 +16,7 @@ import 'screens/people_page.dart';
 import 'screens/profile_page.dart';
 import 'screens/user_page.dart';
 import 'widgets/navigation_drawer_widget.dart';
+import 'package:flutter/services.dart';
 // import 'screens/home.dart';
 // import 'Sport_type.dart';
 import 'firebase_options.dart';
@@ -36,7 +37,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) => runApp(const MyApp()));
 }
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();

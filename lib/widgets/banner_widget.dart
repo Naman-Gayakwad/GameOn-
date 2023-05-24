@@ -58,18 +58,17 @@ class _BannerWidgetState extends State<BannerWidget> {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        height: 160,
-        width: double.infinity,
+        height: MediaQuery.of(context).size.height * 0.18,
+        width: MediaQuery.of(context).size.width * 0.9,
         decoration: BoxDecoration(
-            color: Colors.yellow.shade700,
+            color: Colors.purple.withOpacity(0.2),
             borderRadius: BorderRadius.circular(10)),
         child: PageView.builder(
             controller: _pageController,
             itemCount: _bannerImage.length,
-            itemBuilder: (context, index)
-             {
-              return Image.network(_bannerImage[index],fit:BoxFit.cover);
-             }),
+            itemBuilder: (context, index) {
+              return Image.network(_bannerImage[index], fit: BoxFit.cover);
+            }),
       ),
     );
   }

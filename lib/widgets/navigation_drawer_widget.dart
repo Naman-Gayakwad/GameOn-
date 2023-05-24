@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/about_us.dart';
 import 'package:game_on/screens/contactus.dart';
 import 'package:game_on/screens/feedback_page.dart';
 import 'package:game_on/screens/profile_page.dart';
@@ -209,9 +210,9 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => const ContactUsPage(),
         ));
         break;
-        case 5:
+      case 5:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const ContactUsPage(),
+          builder: (context) => AboutUs(),
         ));
         break;
       case 6:
