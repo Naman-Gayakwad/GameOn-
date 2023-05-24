@@ -60,7 +60,7 @@ class _MainPageState extends State<MainPage> {
               child: GestureDetector(
                 onTap: () {},
                 child: const Icon(
-                  Icons.search,
+                  Icons.notifications,
                   size: 30,
                   color: Colors.white,
                 ),
