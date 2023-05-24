@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:game_on/screens/bookcourse.dart';
 import 'package:game_on/screens/contactus.dart';
+import 'package:game_on/screens/home_container.dart';
 import 'package:game_on/screens/settings_page.dart';
 import 'package:game_on/screens/store.dart';
 import 'package:game_on/widgets/store_grids.dart';
@@ -17,6 +18,7 @@ import 'screens/people_page.dart';
 import 'screens/profile_page.dart';
 import 'screens/user_page.dart';
 import 'widgets/navigation_drawer_widget.dart';
+import 'package:flutter/services.dart';
 // import 'screens/home.dart';
 // import 'Sport_type.dart';
 import 'firebase_options.dart';
@@ -37,7 +39,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) => runApp(const MyApp()));
 }
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();

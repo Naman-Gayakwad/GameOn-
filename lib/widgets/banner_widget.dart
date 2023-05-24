@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/carousel_ontap.dart';
+import 'package:game_on/utils/next_screen.dart';
 
 class BannerWidget extends StatefulWidget {
   const BannerWidget({super.key});
@@ -57,19 +59,23 @@ class _BannerWidgetState extends State<BannerWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(
-        height: 160,
-        width: double.infinity,
-        decoration: BoxDecoration(
-            color: Colors.yellow.shade700,
-            borderRadius: BorderRadius.circular(10)),
-        child: PageView.builder(
-            controller: _pageController,
-            itemCount: _bannerImage.length,
-            itemBuilder: (context, index)
-             {
-              return Image.network(_bannerImage[index],fit:BoxFit.cover);
-             }),
+      child: InkWell(
+        onTap: () {
+          nextScreen(context, CarouselOnTap());
+        },
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.18,
+          width: MediaQuery.of(context).size.width * 0.9,
+          decoration: BoxDecoration(
+              color: Colors.purple.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(10)),
+          child: PageView.builder(
+              controller: _pageController,
+              itemCount: _bannerImage.length,
+              itemBuilder: (context, index) {
+                return Image.network(_bannerImage[index], fit: BoxFit.cover);
+              }),
+        ),
       ),
     );
   }
