@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:game_on/ProductDetail/product_detail.dart';
+import '../utils/next_screen.dart';
 import '../utils.dart';
 
 class Store extends StatefulWidget {
@@ -38,11 +40,17 @@ class _StoreState extends State<Store> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
-                childAspectRatio: 200 / 300),
+                childAspectRatio: 190 / 300),
             itemBuilder: (context, index) {
               final productData = snapshot.data!.docs[index];
               return GestureDetector(
-                onTap: (){},
+                onTap: () {
+                  nextScreenReplace(
+                      context,
+                      ProductDetail(
+                        productData: productData,
+                      ));
+                },
                 child: Card(
                   child: Column(
                     children: [
@@ -50,21 +58,28 @@ class _StoreState extends State<Store> {
                         height: 170,
                         width: 200,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: NetworkImage(productData['image']))
+                            image: DecorationImage(
+                                image: NetworkImage(productData['image']))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          productData['productName'],
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(productData['productName'], style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 2),),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text('\₹' + productData['price'].toString(), style: 
-                        TextStyle(
-                          fontSize: 18, 
-                          fontWeight: FontWeight.bold, 
-                          letterSpacing: 2,
-                          color: Colors.purpleAccent,
+                        child: Text(
+                          '\₹' + productData['price'].toString(),
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 2,
+                            color: Colors.purpleAccent,
                           ),
                         ),
                       ),

@@ -89,7 +89,11 @@ class _OutdoorListState extends State<OutdoorList> {
                       }
 
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Text("Loading");
+                        return Center(
+            child: CircularProgressIndicator(
+              color: Colors.orangeAccent,
+            ),
+          );
                       }
 
                       return GestureDetector(

@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
           //     return const Scene();
           //   },
           // ),
-          body: SettingsPage(),
+          body: Scene(),
         ),
       ),
     );
