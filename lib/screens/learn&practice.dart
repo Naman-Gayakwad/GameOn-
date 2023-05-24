@@ -88,7 +88,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                               borderRadius: BorderRadius.circular(15)),
                           height: MediaQuery.of(context).size.height * 0.11,
                           child: Image.asset(
-                            'assets/images/under16final.png',
+                            'assets/images/Gameon.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -96,14 +96,14 @@ class _LearnPracticeState extends State<LearnPractice> {
                           height: MediaQuery.of(context).size.height * 0.008,
                         ),
                         Text(
-                          'Under 16',
+                          'Quiz',
                           style: TextStyle(fontSize: 18, color: Colors.purple),
                         ),
                       ],
                     ),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.07,
+                    width: MediaQuery.of(context).size.width * 0.09,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.4,
@@ -127,7 +127,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                           height: MediaQuery.of(context).size.height * 0.008,
                         ),
                         Text(
-                          'Under 19',
+                          '1 vs 1',
                           style: TextStyle(fontSize: 18, color: Colors.purple),
                         ),
                       ],
@@ -157,7 +157,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                               borderRadius: BorderRadius.circular(15)),
                           height: MediaQuery.of(context).size.height * 0.11,
                           child: Image.asset(
-                            'assets/images/under16final.png',
+                            'assets/images/vsAI.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -165,14 +165,14 @@ class _LearnPracticeState extends State<LearnPractice> {
                           height: MediaQuery.of(context).size.height * 0.008,
                         ),
                         Text(
-                          'Under 16',
+                          'vs AI',
                           style: TextStyle(fontSize: 18, color: Colors.purple),
                         ),
                       ],
                     ),
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.07,
+                    width: MediaQuery.of(context).size.width * 0.09,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.4,
@@ -188,7 +188,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                               borderRadius: BorderRadius.circular(15)),
                           height: MediaQuery.of(context).size.height * 0.11,
                           child: Image.asset(
-                            'assets/images/under16.png',
+                            'assets/images/under21final.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -196,7 +196,7 @@ class _LearnPracticeState extends State<LearnPractice> {
                           height: MediaQuery.of(context).size.height * 0.008,
                         ),
                         Text(
-                          'Under 19',
+                          'Videos',
                           style: TextStyle(fontSize: 18, color: Colors.purple),
                         ),
                       ],
@@ -366,11 +366,11 @@ class _LearnPracticeState extends State<LearnPractice> {
               //   ),
               // ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.008,
+                height: MediaQuery.of(context).size.height * 0.025,
               ),
               Container(
                 margin:
-                    EdgeInsets.fromLTRB(12 * fem, 0 * fem, 27 * fem, 0 * fem),
+                    EdgeInsets.fromLTRB(18 * fem, 0 * fem, 27 * fem, 0 * fem),
                 padding:
                     EdgeInsets.fromLTRB(14 * fem, 11 * fem, 22 * fem, 14 * fem),
                 width: double.infinity,
