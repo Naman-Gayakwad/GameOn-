@@ -1,6 +1,7 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:game_on/screens/video_player.dart';
 import '../widgets/banner_widget.dart';
 // import 'learn&practice.dart';
 // import 'mainPageHomePageStacked.dart';
@@ -619,7 +620,31 @@ class _HomeState extends State<Home> {
                       ],
                     )
                   ]),
-            )
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                '    Start your day with yoga!',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFA32EEB)),
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.008,
+            ),
+            Text(
+              'Find your balance, body and soul through art of yoga!       ',
+              style: TextStyle(color: const Color(0xFFA32EEB).withOpacity(0.8)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: YoutubePlayerWidget(),
+              ),
+            ),
           ],
         ),
       ),
