@@ -1,5 +1,25 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:game_on/screens/bookcourse.dart';
+import 'package:game_on/screens/contactus.dart';
+import 'package:game_on/screens/home_container.dart';
+import 'package:game_on/screens/settings_page.dart';
+import 'package:game_on/screens/store.dart';
+import 'package:game_on/widgets/store_grids.dart';
+import 'package:game_on/widgets/video_tile.dart';
+import 'screens/be_a_mentor.dart';
+import 'screens/coach.dart';
+import 'screens/create_account.dart';
+import 'screens/forgot_password_screen.dart';
+import 'screens/home.dart';
+import 'screens/mainpage.dart';
+import 'screens/people_page.dart';
+import 'screens/profile_page.dart';
+import 'screens/user_page.dart';
+import 'widgets/navigation_drawer_widget.dart';
+>>>>>>> 42b958c45606e82504a13903c401de7929f928c1
 import 'package:flutter/services.dart';
 import 'firebase_options.dart';
 import 'providers/internet_provider.dart';
