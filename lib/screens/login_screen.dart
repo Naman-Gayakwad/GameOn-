@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Stack(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.73,
+            height: MediaQuery.of(context).size.height * 0.74,
             width: MediaQuery.of(context).size.width * 1.4,
             child: Container(
               decoration: const BoxDecoration(

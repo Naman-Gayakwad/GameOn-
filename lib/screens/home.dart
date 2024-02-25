@@ -639,11 +639,9 @@ class _HomeState extends State<Home> {
               'Find your balance, body and soul through art of yoga!       ',
               style: TextStyle(color: const Color(0xFFA32EEB).withOpacity(0.8)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: YoutubePlayerWidget(),
-              ),
+            const Padding(
+              padding:  EdgeInsets.all(10.0),
+              child:  YoutubePlayerWidget(),
             ),
           ],
         ),
